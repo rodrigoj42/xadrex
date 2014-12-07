@@ -14,7 +14,10 @@ void Game::run()
 
     SDL_Event e;
     for (;;) {
-        SDL_PollEvent(&e);
+        if (SDL_PollEvent(&e) == 0) {
+            SDL_Delay(1);
+            continue;
+        }
 
         switch (e.type) {
         case SDL_QUIT:

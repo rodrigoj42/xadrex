@@ -2,10 +2,12 @@
 #define CHESSGAME_H_INCLUDED
 
 #include "Game.h"
+#include "ControlManager.h"
 
 class ChessGame: public Game
 {
 private:
+    ControlManager m_controlManager;
 
 protected:
     void onMouseMove(int x, int y);
