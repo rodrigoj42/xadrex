@@ -1,31 +1,24 @@
 #ifndef GAME_H_INCLUDED
 #define GAME_H_INCLUDED
 
-#define GAMESETTINGS_FILENAME "GameSettings.lua"
-#define GAMESETTINGS_timeLimit_Player "timeLimit_Player"
-#define GAMESETTINGS_timeLimit_Turn "timeLimit_Turn"
-
-class GameSettings {
-private:
-    bool m_timeLimitPlayerEnabled;
-    bool m_timeLimitTurnEnabled;
-    unsigned int m_timeLimitPlayer;
-    unsigned int m_timeLimitTurn;
-
-public:
-    bool timeLimitPlayerEnabled();
-    unsigned int timeLimitPlayer();
-    bool timeLimitTurnEnabled();
-    unsigned int timeLimitTurn();
-
-    GameSettings();
-};
+#include <SDL.h>
+#include "Settings.h"
 
 class Game
 {
+protected:
+    SDL_Window *m_window;
+    virtual void onMouseMove(int x, int y) = 0;
+    virtual void onMouseDown(int x, int y) = 0;
+    virtual void onMouseUp(int x, int y) = 0;
 
 public:
-    GameSettings Settings;
+    Settings settings;
+
+    Game(SDL_Window *window);
+
+    void run();
+    virtual void draw() = 0;
 };
 
 #endif // GAME_H_INCLUDED

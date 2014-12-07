@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1417922174 source:c:\users\gabriel\documents\github\xadrex\main.cpp
+1417927781 source:c:\users\gabriel\documents\github\xadrex\main.cpp
 	<SDL.h>
 	<iostream>
-	"Game.h"
+	"ChessGame.h"
+	"Settings.h"
 
 1394940796 c:\users\gabriel\documents\github\xadrex\3rdparty\sdl\i686-w64-mingw32\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -321,7 +322,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1417918630 source:c:\users\gabriel\documents\github\xadrex\game.cpp
+1417927880 source:c:\users\gabriel\documents\github\xadrex\game.cpp
 	<lua.hpp>
 	<iostream>
 	"Game.h"
@@ -350,7 +351,9 @@
 	<stdio.h>
 	"lua.h"
 
-1417916705 c:\users\gabriel\documents\github\xadrex\game.h
+1417927804 c:\users\gabriel\documents\github\xadrex\game.h
+	<SDL.h>
+	"Settings.h"
 
 1394257193 c:\users\gabriel\documents\github\xadrex\3rdparty\sdl\include\sdl.h
 	"SDL_main.h"
@@ -667,4 +670,17 @@
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
+
+1417927719 source:c:\users\gabriel\documents\github\xadrex\chessgame.cpp
+	"ChessGame.h"
+
+1417927538 c:\users\gabriel\documents\github\xadrex\settings.h
+
+1417927824 c:\users\gabriel\documents\github\xadrex\chessgame.h
+	"Game.h"
+
+1417927642 source:c:\users\gabriel\documents\github\xadrex\settings.cpp
+	<lua.hpp>
+	<iostream>
+	"Game.h"
 

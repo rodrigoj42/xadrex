@@ -1,16 +1,12 @@
 #include <SDL.h>
 #include <iostream>
 
-#include "Game.h"
-
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
-
+#include "ChessGame.h"
+#include "Settings.h"
 
 int main( int argc, char* args[] )
 {
 	SDL_Window* window = NULL;
-	SDL_Surface* screenSurface = NULL;
 
 	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
@@ -20,7 +16,7 @@ int main( int argc, char* args[] )
 		return 0;
 	}
 
-	window = SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+	window = SDL_CreateWindow("Xadrex", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, Settings::SCREEN_WIDTH, Settings::SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 	if (window == NULL)
     {
         std::cerr << "Cannot create window" << "\n";
@@ -31,15 +27,11 @@ int main( int argc, char* args[] )
         return 0;
     }
 
-    screenSurface = SDL_GetWindowSurface(window);
+    {
+        ChessGame game(window);
 
-    SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
-
-    SDL_UpdateWindowSurface(window);
-
-    SDL_Delay(2000);
-
-
+        game.run();
+    }
 
 	SDL_DestroyWindow(window);
 
