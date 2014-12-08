@@ -7,13 +7,13 @@
 class Game
 {
 protected:
-    SDL_Window *m_window;
     virtual void onMouseMove(int x, int y) = 0;
     virtual void onMouseDown(int x, int y) = 0;
     virtual void onMouseUp(int x, int y) = 0;
 
 public:
     Settings settings;
+    SDL_Window *window;
 
     Game(SDL_Window *window);
 

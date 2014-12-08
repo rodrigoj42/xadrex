@@ -13,7 +13,7 @@ protected:
     virtual void onMouseLeave();
     virtual void onMouseDown();
     virtual void onMouseUp();
-    virtual void onClick();
+    virtual void onClick(int x, int y);
     bool mouseDown;
     bool mouseOver;
 };

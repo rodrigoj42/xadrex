@@ -1,3 +1,4 @@
+#include <iostream>
 #include "ControlManager.h"
 
 static inline bool isPointOverRect(int x, int y, int w, int h, int point_x, int point_y) {
@@ -49,13 +50,16 @@ void ControlManager::onMouseUp(int x, int y)
     {
         Control *c = *it;
         if (isPointOverControl(c, x, y)) {
+            int rel_x = x - c->x;
+            int rel_y = y - c->y;
+
             bool oldMouseDown = c->mouseDown;
             c->mouseDown = false;
 
             c->onMouseUp();
 
             if (oldMouseDown) {
-                c->onClick();
+                c->onClick(rel_x, rel_y);
             }
         }
     }

@@ -7,8 +7,8 @@ const char *SETTINGS_FILENAME = "GameSettings.lua";
 const char *SETTINGS_timeLimit_Player = "timeLimit_Player";
 const char *SETTINGS_timeLimit_Turn ="timeLimit_Turn";
 
-const int Settings::SCREEN_WIDTH = 1280;
-const int Settings::SCREEN_HEIGHT = 720;
+const int Settings::SCREEN_WIDTH = 800;
+const int Settings::SCREEN_HEIGHT = 600;
 
 bool Settings::timeLimitPlayerEnabled()
 {
@@ -38,6 +38,7 @@ Settings::Settings()
     if (err) {
         std::cerr << "Cannot run " << SETTINGS_FILENAME << "\n";
         std::cerr << lua_tostring(L, -1) << "\n";
+        lua_pop(L, 1);
 
         m_timeLimitPlayerEnabled = false;
         m_timeLimitTurnEnabled = false;

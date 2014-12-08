@@ -5,7 +5,7 @@
 
 Game::Game(SDL_Window *window)
 {
-    m_window = window;
+    this->window = window;
 }
 
 void Game::run()
