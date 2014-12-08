@@ -31,18 +31,17 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
-			<Add directory="3rdparty/SDL/i686-w64-mingw32/include/SDL2" />
-			<Add directory="3rdparty/lua/include" />
+			<Add directory="/home/sbvb/Dropbox/app/lua/include" />
+			<Add directory="/usr/local/include/SDL2" />
 		</Compiler>
 		<Linker>
-			<Add option="-lmingw32 -lSDL2main -lSDL2 -llua52" />
-			<Add directory="3rdparty/SDL/i686-w64-mingw32/lib" />
-			<Add directory="3rdparty/SDL/i686-w64-mingw32/bin" />
-			<Add directory="3rdparty/lua" />
+			<Add option="-lSDL2main -lSDL2 -llua52 -LLIBDIR -Wl,-rpath -Wl,LIBDIR" />
+			<Add library="/usr/local/lib/libSDL2-2.0.so.0" />
+			<Add directory="/home/sbvb/Dropbox/app/lua" />
+			<Add directory="/usr/local/lib/" />
 		</Linker>
 		<Unit filename="BoardView.cpp" />
 		<Unit filename="BoardView.h" />
-		<Unit filename="CellView.cpp" />
 		<Unit filename="CellView.h" />
 		<Unit filename="ChessGame.cpp" />
 		<Unit filename="ChessGame.h" />
